@@ -18,8 +18,8 @@ const CategorySelect: React.FC<Props> = () => {
 
   const length = () => {
     const posts = usePostQuery()
-    return posts.getPostsLength
-  }
+    return posts.length
+  } 
 
 
   const handleOptionClick = (category: string) => {
