@@ -17,8 +17,7 @@ const CategorySelect: React.FC<Props> = () => {
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
 
   const posts = usePostsQuery()
-
-  const length = posts.length
+  let length = posts.length
 
 
 
@@ -37,7 +36,9 @@ const CategorySelect: React.FC<Props> = () => {
       </div>
       {opened && (
         <div className="content">
-          {Object.keys(data).map((key, idx) => (
+          {Object.keys(data).map((key, idx) => {
+            {length = data[key]}
+            return (
             <div
               className="item"
               key={idx}
@@ -45,7 +46,7 @@ const CategorySelect: React.FC<Props> = () => {
             >
               {`${key} (${data[key]})`}
             </div>
-          ))}
+          )})}
         </div>
       )}
     </StyledWrapper>
