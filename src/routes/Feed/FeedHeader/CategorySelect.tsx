@@ -16,10 +16,10 @@ const CategorySelect: React.FC<Props> = () => {
 
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
 
-  const posts = usePostsQuery()
-
-  const length = posts.length
-
+  const length = () => {
+    const posts = usePostsQuery()
+    return posts.length
+  } 
 
 
   const handleOptionClick = (category: string) => {
