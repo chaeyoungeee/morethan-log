@@ -5,7 +5,7 @@ import { MdExpandMore } from "react-icons/md"
 import { DEFAULT_CATEGORY } from "src/constants"
 import styled from "@emotion/styled"
 import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
-import usePostsQuery from "src/hooks/usePostsQuery"
+import usePostQuery from "src/hooks/usePostQuery"
 
 type Props = {}
 
@@ -17,7 +17,7 @@ const CategorySelect: React.FC<Props> = () => {
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
 
   const length = () => {
-    const posts = usePostsQuery()
+    const posts = usePostQuery()
     return posts.length
   } 
 
