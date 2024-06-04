@@ -10,6 +10,7 @@ import ProfileCard from "./ProfileCard"
 import ServiceCard from "./ServiceCard"
 import ContactCard from "./ContactCard"
 import PostList from "./PostList"
+import CategoryList from "./CateogyList"
 
 const HEADER_HEIGHT = 73
 
@@ -27,6 +28,7 @@ const Feed: React.FC<Props> = () => {
         }}
       >
         <TagList />
+        <CategoryList />
       </div>
       <div className="mid">
         <MobileProfileCard />
